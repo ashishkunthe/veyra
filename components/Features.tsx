@@ -3,24 +3,24 @@ import { motion } from "framer-motion";
 
 const features = [
   {
-    emoji: "⚡",
-    title: "One-Click Invoices",
-    desc: "Generate and share invoices instantly — no templates needed.",
-  },
-  {
-    emoji: "☁️",
-    title: "Cloud Storage",
-    desc: "Access all your invoices anywhere, anytime — securely in the cloud.",
-  },
-  {
     emoji: "📬",
-    title: "Smart Email Delivery",
-    desc: "Send invoices with tracking and delivery status built-in.",
+    title: "Smart Invoice Delivery",
+    desc: "Send invoices instantly with built-in tracking and delivery insights so you always know when clients receive them.",
   },
   {
-    emoji: "🔁",
-    title: "Recurring Billing",
-    desc: "Automate repetitive invoicing and focus on growing your business.",
+    emoji: "📊",
+    title: "Real-Time Tracking",
+    desc: "Stay updated on invoice status at every step from sent to opened to paid without lifting a finger.",
+  },
+  {
+    emoji: "💳",
+    title: "Seamless Payments",
+    desc: "Include payment links directly in your invoices and get paid faster, without messy back-and-forth.",
+  },
+  {
+    emoji: "🔔",
+    title: "Automated Reminders",
+    desc: "Follow-ups for pending payments and overdue invoices are handled automatically so you don’t have to chase clients.",
   },
 ];
 
@@ -30,17 +30,26 @@ export default function Features() {
       id="features"
       className="w-full py-28 bg-gradient-to-b from-black via-indigo-950 to-black text-center text-white relative overflow-hidden"
     >
-      {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-indigo-600 opacity-20 blur-[120px] rounded-full"></div>
 
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-5xl font-extrabold mb-16"
+        className="text-5xl font-extrabold mb-4"
       >
-        Why Teams ❤️ <span className="text-indigo-400">Veyra</span>
+        Why to join <span className="text-indigo-400">Veyra</span>
       </motion.h2>
+
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.8 }}
+        className="text-lg text-gray-300 max-w-2xl mx-auto mb-16"
+      >
+        Stop chasing clients. Start tracking invoices. Join the public beta
+        today and experience stress-free invoicing.
+      </motion.p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto px-6 relative z-10">
         {features.map((f, idx) => (

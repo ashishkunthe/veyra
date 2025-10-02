@@ -13,7 +13,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8 text-gray-300 font-medium">
+        <nav className="hidden md:flex items-center gap-8 text-white font-medium">
           <Link href="#features" className="hover:text-indigo-400 transition">
             Features
           </Link>
