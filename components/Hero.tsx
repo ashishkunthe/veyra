@@ -1,13 +1,19 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
+import WaitlistModal from "@/components/WaitList";
 
 export default function Hero() {
+  const [showWaitlist, setShowWaitlist] = useState(false);
+
   return (
     <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-center text-center bg-gradient-to-br from-gray-900 via-indigo-900 to-black text-white px-6 overflow-hidden">
+      {/* Background blur lights */}
       <div className="absolute top-20 -left-20 w-96 h-96 bg-indigo-600 opacity-30 blur-[120px] rounded-full"></div>
       <div className="absolute bottom-20 -right-20 w-96 h-96 bg-purple-600 opacity-30 blur-[120px] rounded-full"></div>
 
+      {/* Beta Badge */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -18,6 +24,7 @@ export default function Hero() {
         public beta
       </motion.div>
 
+      {/* Hero Heading */}
       <motion.h1
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -27,6 +34,7 @@ export default function Hero() {
         The Future of <span className="text-indigo-400">Invoicing</span> is Here
       </motion.h1>
 
+      {/* Subtext */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -37,26 +45,28 @@ export default function Hero() {
         invoices built for modern SaaS teams and freelancers.
       </motion.p>
 
+      {/* Buttons */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.8 }}
         className="mt-10 flex gap-4 justify-center flex-wrap"
       >
-        <a
-          href="#"
+        <button
+          onClick={() => setShowWaitlist(true)}
           className="px-8 py-4 bg-indigo-500 text-white rounded-full font-semibold hover:bg-indigo-600 transition shadow-lg"
         >
           Join Public Beta
-        </a>
-        <a
-          href="#"
+        </button>
+        <button
+          onClick={() => setShowWaitlist(true)}
           className="px-8 py-4 bg-transparent border border-white font-semibold rounded-full hover:bg-white hover:text-black transition"
         >
           View Demo
-        </a>
+        </button>
       </motion.div>
 
+      {/* Dashboard Preview Image */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -71,6 +81,12 @@ export default function Hero() {
           className="rounded-2xl shadow-2xl border border-white/10"
         />
       </motion.div>
+
+      {/* ✨ Waitlist Modal */}
+      <WaitlistModal
+        isOpen={showWaitlist}
+        onClose={() => setShowWaitlist(false)}
+      />
     </section>
   );
 }

@@ -1,7 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import WaitlistModal from "./WaitList";
 
 export default function CTA() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <section className="w-full py-28 bg-gradient-to-r from-indigo-700 via-purple-700 to-indigo-700 text-center text-white relative overflow-hidden">
       <div className="absolute -top-20 -left-20 w-[400px] h-[400px] bg-purple-500 opacity-30 blur-[150px] rounded-full"></div>
@@ -27,13 +31,16 @@ export default function CTA() {
         billing and save hours every month.
       </motion.p>
 
-      <motion.a
-        href="#"
+      <motion.button
         whileHover={{ scale: 1.05 }}
+        onClick={() => setIsOpen(true)}
         className="inline-block px-12 py-4 bg-white text-indigo-700 rounded-full font-semibold shadow-lg hover:shadow-xl transition relative z-10"
       >
         Join the Waitlist
-      </motion.a>
+      </motion.button>
+
+      {/* 📩 Include the modal */}
+      <WaitlistModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </section>
   );
 }
