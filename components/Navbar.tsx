@@ -4,28 +4,29 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header className="w-full fixed top-0 bg-black/60 backdrop-blur-md border-b border-white/10 z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <header className="fixed top-0 w-full bg-[#18130c] backdrop-blur-md border-b border-white/10 z-50">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+        {/* Logo and Brand */}
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.svg" alt="Veyra Logo" width={40} height={40} />
-          <span className="text-2xl font-bold bg-gradient-to-r text-amber-50  bg-clip-text">
-            Veyra
-          </span>
+          <span className="text-white font-medium tracking-wide">Veyra</span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8 text-white font-medium">
-          <Link href="#features" className="hover:text-indigo-400 transition">
+        {/* Navigation Links */}
+        <nav className="hidden md:flex items-center gap-8 text-sm text-gray-300">
+          <Link href="#features" className="hover:text-white transition">
             Features
           </Link>
-          <Link href="#pricing" className="hover:text-indigo-400 transition">
+          <Link href="#pricing" className="hover:text-white transition">
             Pricing
           </Link>
-          <Link href="#how" className="hover:text-indigo-400 transition">
+          <Link href="#how" className="hover:text-white transition">
             How it Works
           </Link>
+
+          {/* CTA Button */}
           <Link
             href="#"
-            className="px-5 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-full hover:opacity-90 transition"
+            className="px-5 py-2 text-sm bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-full hover:opacity-90 transition"
           >
             Get Started
           </Link>

@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="flex flex-col items-center pt-19.5">
+      <main className="flex flex-col items-center pt-14">
         {" "}
         <Hero />
         <Features />
