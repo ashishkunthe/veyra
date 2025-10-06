@@ -20,11 +20,11 @@ const plans = [
   },
   {
     name: "Starter",
-    price: "₹200",
+    price: "₹299",
     period: "/month",
     highlight: true,
     features: [
-      "Up to 1000 invoices/month",
+      "Up to 1,000 invoices/month",
       "Payment links in invoices",
       "Real-time tracking",
       "Automated reminders",
@@ -33,7 +33,7 @@ const plans = [
   },
   {
     name: "Pro",
-    price: "₹499",
+    price: "₹749",
     period: "/month",
     highlight: false,
     features: [
@@ -55,8 +55,10 @@ export default function Pricing() {
         id="pricing"
         className="w-full py-28 bg-gradient-to-b from-black via-indigo-950 to-black text-white text-center relative overflow-hidden"
       >
+        {/* Soft glow background */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-indigo-600 opacity-20 blur-[120px] rounded-full"></div>
 
+        {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,9 +74,10 @@ export default function Pricing() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="text-lg text-gray-300 max-w-2xl mx-auto mb-16"
         >
-          Start free with 5 invoices total upgrade when you’re ready to scale 🚀
+          Start free with 5 invoices and upgrade when you’re ready to scale 🚀
         </motion.p>
 
+        {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6 relative z-10">
           {plans.map((plan, idx) => (
             <motion.div
@@ -82,11 +85,11 @@ export default function Pricing() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.2, duration: 0.7 }}
-              className={`p-10 rounded-2xl border ${
+              className={`p-10 rounded-2xl border transition backdrop-blur-md hover:scale-105 ${
                 plan.highlight
                   ? "bg-indigo-600 border-indigo-400 scale-105 shadow-2xl"
                   : "bg-white/5 border-white/10"
-              } hover:scale-105 transition backdrop-blur-md`}
+              }`}
             >
               <h3 className="text-3xl font-semibold mb-4">{plan.name}</h3>
               <div className="text-5xl font-extrabold mb-2">{plan.price}</div>
@@ -115,7 +118,7 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* 🔥 Waitlist modal directly used here */}
+      {/* Waitlist modal */}
       <WaitlistModal
         isOpen={showWaitlist}
         onClose={() => setShowWaitlist(false)}
