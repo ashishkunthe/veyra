@@ -79,7 +79,7 @@ export default function Hero() {
         className="flex-1 mt-16 lg:mt-0 flex justify-center"
       >
         <Image
-          src="/veyra.png"
+          src="/screen.png"
           alt="Veyra Dashboard Preview"
           width={600}
           height={400}
