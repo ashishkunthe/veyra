@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "Veyra – Smart SaaS Invoicing Preview",
-        type: "image/svg+xml",
+        type: "svg+xml",
       },
     ],
   },
