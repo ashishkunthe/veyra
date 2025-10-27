@@ -53,10 +53,10 @@ export default function Pricing() {
     <>
       <section
         id="pricing"
-        className="w-full py-28 bg-gradient-to-b from-black via-indigo-950 to-black text-white text-center relative overflow-hidden"
+        className="w-full py-28 bg-[#fff9f1] text-gray-900 text-center relative overflow-hidden"
       >
-        {/* Soft glow background */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-indigo-600 opacity-20 blur-[120px] rounded-full"></div>
+        {/* Soft Ambient Glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-amber-200 opacity-25 blur-[140px] rounded-full"></div>
 
         {/* Heading */}
         <motion.h2
@@ -68,11 +68,12 @@ export default function Pricing() {
           Choose Your Plan
         </motion.h2>
 
+        {/* Subheading */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-lg text-gray-300 max-w-2xl mx-auto mb-16"
+          className="text-lg text-gray-700 max-w-2xl mx-auto mb-16"
         >
           Start free with 5 invoices and upgrade when you’re ready to scale 🚀
         </motion.p>
@@ -85,30 +86,35 @@ export default function Pricing() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.2, duration: 0.7 }}
-              className={`p-10 rounded-2xl border transition backdrop-blur-md hover:scale-105 ${
+              className={`p-10 rounded-2xl border transition shadow-md hover:shadow-xl hover:scale-105 ${
                 plan.highlight
-                  ? "bg-indigo-600 border-indigo-400 scale-105 shadow-2xl"
-                  : "bg-white/5 border-white/10"
+                  ? "bg-amber-500 text-white border-amber-500 scale-105"
+                  : "bg-white border-gray-200"
               }`}
             >
               <h3 className="text-3xl font-semibold mb-4">{plan.name}</h3>
               <div className="text-5xl font-extrabold mb-2">{plan.price}</div>
-              <p className="text-gray-400 mb-6">{plan.period}</p>
+              <p className="text-gray-700 mb-6">{plan.period}</p>
 
               <ul className="text-left space-y-3 mb-8">
                 {plan.features.map((feat, i) => (
-                  <li key={i} className="text-gray-300 flex items-center gap-2">
-                    <Check className="w-5 h-5 text-green-400" /> {feat}
+                  <li
+                    key={i}
+                    className={`flex items-center gap-2 ${
+                      plan.highlight ? "text-white" : "text-gray-700"
+                    }`}
+                  >
+                    <Check className="w-5 h-5 text-amber-500" /> {feat}
                   </li>
                 ))}
               </ul>
 
               <button
                 onClick={() => setShowWaitlist(true)}
-                className={`w-full px-8 py-3 rounded-full font-semibold block transition ${
+                className={`w-full px-8 py-3 rounded-full font-semibold transition ${
                   plan.highlight
-                    ? "bg-white text-indigo-600 hover:bg-gray-100"
-                    : "bg-indigo-600 hover:bg-indigo-700"
+                    ? "bg-white text-amber-500 hover:bg-gray-100"
+                    : "bg-amber-500 text-white hover:bg-amber-500"
                 }`}
               >
                 {plan.cta}
@@ -118,7 +124,7 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Waitlist modal */}
+      {/* Waitlist Modal */}
       <WaitlistModal
         isOpen={showWaitlist}
         onClose={() => setShowWaitlist(false)}
