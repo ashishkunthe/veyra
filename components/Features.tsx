@@ -6,22 +6,22 @@ const features = [
   {
     icon: <Mail className="w-6 h-6 text-amber-600" />,
     title: "Smart Invoice Delivery",
-    desc: "Send invoices directly to your clients’ inboxes with our smart delivery system, ensuring prompt receipt and reducing delays.",
+    desc: "Send invoices directly to your clients’ inbox for faster payments.",
   },
   {
     icon: <LineChart className="w-6 h-6 text-amber-600" />,
     title: "Real-Time Tracking",
-    desc: "Monitor the status of your invoices in real-time, from sending to payment, so you always know where your finances stand.",
+    desc: "Track invoicing progress instantly from sent to paid.",
   },
   {
     icon: <CreditCard className="w-6 h-6 text-amber-600" />,
     title: "Seamless Payments",
-    desc: "Accept payments effortlessly through various methods, including credit cards, bank transfers, and digital wallets, for quick and convenient transactions.",
+    desc: "Accept payments easily via cards, bank transfer or UPI.",
   },
   {
     icon: <Bell className="w-6 h-6 text-amber-600" />,
     title: "Automated Reminders",
-    desc: "Set up automated reminders for overdue invoices, ensuring timely follow-ups without manual effort, and maintaining healthy client relationships.",
+    desc: "Never chase payments manually again.",
   },
 ];
 
@@ -29,48 +29,51 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="w-full py-28 bg-[#f7f3e9] text-gray-900 relative overflow-hidden"
+      className="w-full py-24 bg-[#fdfaf5] text-gray-900 overflow-hidden"
     >
       {/* Heading */}
-      <div className="text-center relative z-10 px-4">
+      <div className="text-center px-6">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-extrabold mb-4"
+          className="text-4xl md:text-5xl font-extrabold mb-5 leading-tight"
         >
-          Why to join <span className="text-amber-700">Veyra</span>
+          Why Teams Choose <span className="text-amber-700">Veyra</span>
         </motion.h2>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto mb-16"
+          transition={{ delay: 0.15, duration: 0.7 }}
+          className="text-gray-600 max-w-2xl mx-auto text-sm md:text-lg mb-14"
         >
-          Veyra is the ultimate solution for streamlining your invoicing
-          process. With our intuitive platform, you can effortlessly create,
-          send, and manage invoices, ensuring timely payments and improved cash
-          flow.
+          Boost productivity and get paid faster with intelligent invoicing
+          tools built for SaaS and freelancers.
         </motion.p>
       </div>
 
       {/* Features Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto px-6 relative z-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto px-6">
         {features.map((f, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: idx * 0.2, duration: 0.7 }}
-            className="flex items-start gap-4 p-8 bg-white/90 border border-gray-200 rounded-2xl shadow-md hover:shadow-lg transition"
+            transition={{ delay: idx * 0.15, duration: 0.6 }}
+            className="flex items-start gap-4 p-6 sm:p-8 bg-white border border-amber-100 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition"
           >
-            <div className="p-3 bg-amber-100 rounded-lg">{f.icon}</div>
+            <div className="p-3 bg-amber-100/70 rounded-lg shrink-0">
+              {f.icon}
+            </div>
+
             <div className="text-left">
-              <h3 className="text-xl font-semibold mb-2 text-gray-900">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">
                 {f.title}
               </h3>
-              <p className="text-gray-700 text-sm leading-relaxed">{f.desc}</p>
+              <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+                {f.desc}
+              </p>
             </div>
           </motion.div>
         ))}

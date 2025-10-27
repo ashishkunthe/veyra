@@ -8,8 +8,8 @@ export default function Hero() {
   const [showWaitlist, setShowWaitlist] = useState(false);
 
   return (
-    <section className="relative w-full min-h-[90vh] flex flex-col-reverse lg:flex-row items-center justify-center bg-white text-black px-6 md:px-16 overflow-hidden">
-      {/* 📊 Left: Product Image */}
+    <section className="relative w-full min-h-screen flex flex-col-reverse lg:flex-row items-center justify-between bg-white text-black px-6 sm:px-8 md:px-12 lg:px-20 py-20">
+      {/* Left Image */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
         animate={{ opacity: 1, x: 0 }}
@@ -21,32 +21,32 @@ export default function Hero() {
           alt="Veyra Dashboard Preview"
           width={550}
           height={350}
-          className="rounded-xl shadow-lg"
+          className="rounded-xl shadow-xl w-full max-w-lg"
         />
       </motion.div>
 
-      {/* 📜 Right: Text Content */}
+      {/* Right Text */}
       <div className="flex-1 text-center lg:text-left z-10 max-w-xl">
-        {/* Beta badge */}
+        {/* Amber Beta badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="inline-block px-4 py-2 bg-blue-100 text-sm rounded-full text-amber-700 mb-6"
+          className="inline-block px-4 py-2 bg-amber-100 text-amber-700 text-sm rounded-full mb-6"
         >
-          🚀 Introducing <span className="font-semibold">Veyra</span> - now in
-          public beta
+          🚀 Introducing <span className="font-semibold">Veyra</span> Public
+          Beta
         </motion.div>
 
-        {/* Heading */}
+        {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-6xl font-extrabold leading-tight"
+          className="text-4xl md:text-6xl font-extrabold leading-tight"
         >
-          The Future of <span className="text-shadow-amber-300">Invoicing</span>{" "}
-          is <span className="text-shadow-amber-600">Here</span>
+          Create invoices
+          <span className="text-amber-600"> effortlessly</span> in minutes
         </motion.h1>
 
         {/* Subtext */}
@@ -54,11 +54,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-gray-600 mt-6 text-lg"
+          className="text-gray-600 mt-6 text-base md:text-lg max-w-md mx-auto lg:mx-0"
         >
-          Veyra is the all-in-one invoicing platform for SaaS teams and
-          freelancers. Get paid faster, manage your finances, and grow your
-          business with ease.
+          Automate your workflow, get paid faster, and focus on the work you
+          love. Designed for SaaS teams and freelancers.
         </motion.p>
 
         {/* Buttons */}
@@ -66,24 +65,24 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="mt-10 flex flex-col sm:flex-row gap-4 lg:justify-start justify-center"
+          className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
         >
           <button
             onClick={() => setShowWaitlist(true)}
-            className="px-8 py-4 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition"
+            className="px-10 py-4 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition"
           >
             Join Public Beta
           </button>
+
           <button
             onClick={() => setShowWaitlist(true)}
-            className="px-8 py-4 bg-transparent border border-gray-300 text-black font-semibold rounded-lg hover:bg-gray-100 transition"
+            className="px-10 py-4 border border-amber-600 text-amber-700 font-semibold rounded-lg hover:bg-amber-50 transition"
           >
             View Demo
           </button>
         </motion.div>
       </div>
 
-      {/* ✨ Modal */}
       <WaitlistModal
         isOpen={showWaitlist}
         onClose={() => setShowWaitlist(false)}
