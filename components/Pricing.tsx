@@ -24,7 +24,7 @@ const plans = [
     period: "/month",
     highlight: true,
     features: [
-      "Up to 1,000 invoices/month",
+      "Up to 50 invoices/month",
       "Payment links in invoices",
       "Real-time tracking",
       "Automated reminders",
@@ -37,7 +37,7 @@ const plans = [
     period: "/month",
     highlight: false,
     features: [
-      "Unlimited invoices",
+      "100 invoices/month",
       "All Starter features",
       "Priority support",
       "Future pro tools",
