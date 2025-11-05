@@ -125,15 +125,16 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-
               <button
-                onClick={() => setShowWaitlist(true)}
+                onClick={() =>
+                  (window.location.href = "https://veyra-main.vercel.app")
+                }
                 className={`w-full px-8 py-3 rounded-full font-semibold transition
-                ${
-                  plan.highlight
-                    ? "bg-white text-amber-600 hover:bg-gray-100"
-                    : "bg-amber-500 text-white hover:bg-amber-600"
-                }`}
+    ${
+      plan.highlight
+        ? "bg-white text-amber-600 hover:bg-gray-100"
+        : "bg-amber-500 text-white hover:bg-amber-600"
+    }`}
               >
                 {plan.cta}
               </button>

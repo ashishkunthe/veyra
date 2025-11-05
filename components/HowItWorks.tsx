@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FileText, Send, Repeat } from "lucide-react";
-import WaitlistModal from "@/components/WaitList";
 
 const steps = [
   {
@@ -23,8 +22,6 @@ const steps = [
 ];
 
 export default function HowItWorks() {
-  const [showWaitlist, setShowWaitlist] = useState(false);
-
   return (
     <>
       <section
@@ -83,19 +80,17 @@ export default function HowItWorks() {
           transition={{ delay: 0.75, duration: 0.6 }}
           className="mt-14"
         >
-          <button
-            onClick={() => setShowWaitlist(true)}
-            className="px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white rounded-full font-semibold shadow-md transition"
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            href="https://veyra-main.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white rounded-full font-semibold shadow-md transition inline-block"
           >
             Start Free Today
-          </button>
+          </motion.a>
         </motion.div>
       </section>
-
-      <WaitlistModal
-        isOpen={showWaitlist}
-        onClose={() => setShowWaitlist(false)}
-      />
     </>
   );
 }

@@ -1,12 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import WaitlistModal from "./WaitList";
-import { Rocket } from "lucide-react";
 
 export default function CTA() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <section className="w-full py-20 md:py-28 bg-[#fff9f1] text-center text-gray-900 relative overflow-hidden">
       {/* Ambient Glow */}
@@ -35,16 +30,15 @@ export default function CTA() {
       </motion.p>
 
       {/* CTA Button */}
-      <motion.button
+      <motion.a
         whileHover={{ scale: 1.08 }}
-        onClick={() => setIsOpen(true)}
-        className="px-10 py-4 bg-amber-600 text-white text-lg rounded-full font-semibold shadow-md hover:shadow-xl hover:bg-amber-700 transition relative z-10"
+        href="https://veyra-main.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-10 py-4 bg-amber-600 text-white text-lg rounded-full font-semibold shadow-md hover:shadow-xl hover:bg-amber-700 transition relative z-10 inline-block"
       >
-        Join the Waitlist
-      </motion.button>
-
-      {/* Modal */}
-      <WaitlistModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+        Get Started
+      </motion.a>
     </section>
   );
 }

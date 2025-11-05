@@ -27,7 +27,7 @@ export default function Navbar() {
 
           {/* CTA */}
           <Link
-            href="#"
+            href="https://veyra-main.vercel.app/"
             className="px-5 py-2 text-sm bg-[#c77120] text-white rounded-full hover:bg-[#8C6239] transition shadow-sm"
           >
             Get Started

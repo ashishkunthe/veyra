@@ -67,19 +67,23 @@ export default function Hero() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
         >
-          <button
-            onClick={() => setShowWaitlist(true)}
-            className="px-10 py-4 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition"
+          <a
+            href="https://veyra-main.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-10 py-4 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition text-center"
           >
             Join Public Beta
-          </button>
+          </a>
 
-          <button
-            onClick={() => setShowWaitlist(true)}
-            className="px-10 py-4 border border-amber-600 text-amber-700 font-semibold rounded-lg hover:bg-amber-50 transition"
+          <a
+            href="https://veyra-main.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-10 py-4 border border-amber-600 text-amber-700 font-semibold rounded-lg hover:bg-amber-50 transition text-center"
           >
             View Demo
-          </button>
+          </a>
         </motion.div>
       </div>
 
